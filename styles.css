@@ -14,10 +14,20 @@ header{
     grid-area: header;
     background-color: aqua;
 }
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+section > ul > li{
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 20px;
+}
 main{
     grid-area: main;
     background-color: blueviolet;
-
+    display: flex;
 }
 footer{
     grid-area: footer;
