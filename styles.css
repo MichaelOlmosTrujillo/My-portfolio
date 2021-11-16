@@ -1,35 +1,112 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-body{
+
+.paginaPrincipal {
     display: grid;
     grid-template-areas: "header header"
-                         "main main"
-                         "footer footer";
+        "main main"
+        "footer footer";
 }
 
-header{
+header {
     grid-area: header;
     background-color: aqua;
 }
-nav{
+
+nav {
     display: flex;
     justify-content: space-around;
 }
 
-section > ul > li{
+section>ul>li {
     display: inline-block;
     cursor: pointer;
     margin-left: 20px;
 }
-main{
+
+main {
     grid-area: main;
     background-color: blueviolet;
     display: flex;
 }
-footer{
+
+footer {
     grid-area: footer;
     background-color: burlywood;
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    perspective: 700px;
+    margin: 250px auto;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+    /* background-color: blue; */
+}
+
+.side {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(30, 67, 125, .5);
+}
+
+.side--front {
+    transform: rotateY(0) translateZ(100px);
+    background-color: #0e76a8;
+}
+
+.side--left {
+    transform: rotateY(-90deg) translateZ(100px);
+    background-color: #128ec9;
+}
+
+.side--top {
+    transform: rotateX(90deg) translateZ(100px);
+    background-color: #0b5d85;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    width: 100%;
+    font-family: Impact, sans-serif;
+    font-size: 40px;
+    transition: .5s;
+    transform-origin: left;
+    text-align: left;
+    padding-left: 20px;
+}
+
+button:hover {
+    padding-left: 210px;
+}
+
+.shape {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    left: -300px;
+    top: -80px;
+    background-color: black;
+    z-index: -10;
+    transition: 1s;
+    clip-path:  polygon(95% 6%, 70% 6%, 33% 6%, 15% 5%, 6% 5%, 9% 50%, 
+                       22% 50%, 20% 20%, 36% 20%, 39% 65%, 61% 63%, 61% 19%, 
+                       79% 19%, 80% 51%, 95% 50%);
 }
